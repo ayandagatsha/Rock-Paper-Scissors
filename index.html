@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors JS</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+      
+      
+      let options= ['rock', 'paper', 'scissors']
+
+      function computerPlay(){
+          
+          let randChoice= options[Math.floor(Math.random()*options.length)];
+          return randChoice;
+          
+      }
+
+
+
+
+      function singleRound (playerSelection,computerSelection){
+
+
+        playerSelection= playerSelection.toLowerCase();
+
+        if (playerSelection==='rock' && computerSelection==='rock'){
+        return 'You and the computer both chose rock, its a draw!';
+    }
+    else if (playerSelection==='rock' && computerSelection==='scissors'){
+        return 'You win, the computer chose scissors!';
+    }
+    else if (playerSelection==='rock' && computerSelection==='paper'){
+        return 'You lose, the computer chose paper!';
+    }
+
+
+    else if (playerSelection==='scissors' && computerSelection==='rock'){
+        return 'You lose, the computer chose rock!';
+    }
+    else if (playerSelection==='scissors' && computerSelection==='scissors'){
+        return 'You and the computer both chose scissors, its a draw!';
+    }
+    else if (playerSelection==='scissors' && computerSelection==='paper'){
+        return 'You win, the computer chose paper!';
+    }
+
+
+
+    else if (playerSelection==='paper' && computerSelection==='rock'){
+        return 'You win, the computer chose rock!';
+    }
+    else if (playerSelection==='paper' && computerSelection==='scissors'){
+        return 'You lose, the computer chose scissors!';
+    }
+    else if (playerSelection==='paper' && computerSelection==='paper'){
+        return 'You and the computer both chose paper, its a draw!';
+    }
+    else {
+        return 'choose rock, paper or scissors by typing it!'
+    }
+
+
+
+
+      }
+
+
+
+
+
+
+
+
+
+function game() {
+   
+    let computerScore='0';
+    let playerScore= '0';
+
+    let playerSelection = prompt('Choose by typing: rock, paper or scissors!');
+    let computerSelection = computerPlay();
+
+    let result= singleRound(playerSelection, computerSelection)
+    
+    console.log(result);
+
+    if (result=== 'You win, the computer chose scissors!'||result==='You win, the computer chose rock!'||result=== 'You win, the computer chose paper!')
+{playerScore++;}
+ else if(result==='You lose, the computer chose scissors!'||result==='You lose, the computer chose paper!'||result==='You lose, the computer chose rock!')
+{computerScore++;}
+ else if(result=== 'You and the computer both chose paper, its a draw!'|| result==='You and the computer both chose scissors, its a draw!'||result=== 'You and the computer both chose rock, its a draw!')
+{playerScore,computerScore}; 
+
+
+console.log('Player:',playerScore,'Computer:',computerScore)
+
+
+
+    playerSelection = prompt('Choose by typing: rock, paper or scissors!');
+    computerSelection = computerPlay();
+
+    result= singleRound(playerSelection, computerSelection)
+    
+    console.log(result);
+
+    if (result=== 'You win, the computer chose scissors!'||result==='You win, the computer chose rock!'||result=== 'You win, the computer chose paper!')
+{playerScore++;}
+ else if(result==='You lose, the computer chose scissors!'||result==='You lose, the computer chose paper!'||result==='You lose, the computer chose rock!')
+{computerScore++;}
+ else if(result=== 'You and the computer both chose paper, its a draw!'|| result==='You and the computer both chose scissors, its a draw!'||result=== 'You and the computer both chose rock, its a draw!')
+{playerScore,computerScore}; 
+
+
+console.log('Player:',playerScore,'Computer:',computerScore)
+
+
+playerSelection = prompt('Choose by typing: rock, paper or scissors!');
+    computerSelection = computerPlay();
+
+    result= singleRound(playerSelection, computerSelection)
+    
+    console.log(result);
+
+    if (result=== 'You win, the computer chose scissors!'||result==='You win, the computer chose rock!'||result=== 'You win, the computer chose paper!')
+{playerScore++;}
+ else if(result==='You lose, the computer chose scissors!'||result==='You lose, the computer chose paper!'||result==='You lose, the computer chose rock!')
+{computerScore++;}
+ else if(result=== 'You and the computer both chose paper, its a draw!'|| result==='You and the computer both chose scissors, its a draw!'||result=== 'You and the computer both chose rock, its a draw!')
+{playerScore,computerScore}; 
+
+
+console.log('Player:',playerScore,'Computer:',computerScore)
+
+
+playerSelection = prompt('Choose by typing: rock, paper or scissors!');
+    computerSelection = computerPlay();
+
+    result= singleRound(playerSelection, computerSelection)
+    
+    console.log(result);
+
+    if (result=== 'You win, the computer chose scissors!'||result==='You win, the computer chose rock!'||result=== 'You win, the computer chose paper!')
+{playerScore++;}
+ else if(result==='You lose, the computer chose scissors!'||result==='You lose, the computer chose paper!'||result==='You lose, the computer chose rock!')
+{computerScore++;}
+ else if(result=== 'You and the computer both chose paper, its a draw!'|| result==='You and the computer both chose scissors, its a draw!'||result=== 'You and the computer both chose rock, its a draw!')
+{playerScore,computerScore}; 
+
+
+console.log('Player:',playerScore,'Computer:',computerScore)
+
+
+playerSelection = prompt('Choose by typing: rock, paper or scissors!');
+    computerSelection = computerPlay();
+
+    result= singleRound(playerSelection, computerSelection)
+    
+    console.log(result);
+
+    if (result=== 'You win, the computer chose scissors!'||result==='You win, the computer chose rock!'||result=== 'You win, the computer chose paper!')
+{playerScore++;}
+ else if(result==='You lose, the computer chose scissors!'||result==='You lose, the computer chose paper!'||result==='You lose, the computer chose rock!')
+{computerScore++;}
+ else if(result=== 'You and the computer both chose paper, its a draw!'|| result==='You and the computer both chose scissors, its a draw!'||result=== 'You and the computer both chose rock, its a draw!')
+{playerScore,computerScore}; 
+
+
+console.log('Player:',playerScore,'Computer:',computerScore)
+
+if (playerScore>computerScore){
+    console.log('Winner, winner, chicken dinner!! You won!! Congrats!!')}
+    else if (playerScore<computerScore) {
+        console.log ('Hard luck, the computer won.')
+    }
+    else {
+        console.log('Looks like a draw. Nice try.')
+    }
+
+
+
+
+}  
+
+
+
+
+
+  </script>
+
+</body>
+</html>

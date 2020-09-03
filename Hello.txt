@@ -1,0 +1,12 @@
+Rock, Paper, Scissors
+
+A simple implementation of grade-school classic “rock paper scissors” 
+played on the devtools console. 
+
+5 rounds are played and the winner is announced at the end. 
+
+NB: While the first project of making a look-a-like webpage of the 
+google homepage and using knowledge of how to move and place divs around
+with HTML and CSS, this project is about using knowlege of JavaScript 
+to add rules to what will happen when the user interacts with the created
+program(set rules of instructions for computer to follow). 
