@@ -5,8 +5,40 @@
   <meta charset="UTF-8"/>
 </head>
 <body>
+  
+  
+      <p>This is a basic rock, paper scissors game. Rock wins over scissors, scissors wins over paper and paper wins over rock.</p>  <br>
+
+    <p>Choose rock, paper or scissors by pressing a button to try and win against the computer. The first one to have 5 wins, is the champion. If you are curious, ask Ayanda how the computer decides to choose between rock paper or scissors.</p>
+   
+   <br>
+    <div id="container">
+        <button id="rock">rock</button>
+        <button id="paper">paper</button>
+        <button id="scissors">scissors</button>
+        
+    </div> <br>
+    <div id='score'></div>
+    <br>
+    <div id='commentary'></div>
+    <button type='button' onclick="window.location.reload(false);">reset</button>
+  
   <script>
       
+     const buttons = document.querySelectorAll('button');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+  button.addEventListener('click',game);
+  });
+;
+
+
+
+
+
       
       let options= ['rock', 'paper', 'scissors']
 
@@ -72,116 +104,50 @@
 
 
 
+    let computerScore=0;
+    let playerScore= 0;
+    let round= 0;
+  
 
+ 
 
 function game() {
    
-    let computerScore='0';
-    let playerScore= '0';
-
-    let playerSelection = prompt('Choose by typing: rock, paper or scissors!');
+round++;
+ 
+    let playerSelection = this.id;
     let computerSelection = computerPlay();
-
-    let result= singleRound(playerSelection, computerSelection)
-    
-    console.log(result);
-
-    if (result=== 'You win, the computer chose scissors!'||result==='You win, the computer chose rock!'||result=== 'You win, the computer chose paper!')
-{playerScore++;}
- else if(result==='You lose, the computer chose scissors!'||result==='You lose, the computer chose paper!'||result==='You lose, the computer chose rock!')
-{computerScore++;}
- else if(result=== 'You and the computer both chose paper, its a draw!'|| result==='You and the computer both chose scissors, its a draw!'||result=== 'You and the computer both chose rock, its a draw!')
-{playerScore,computerScore}; 
+    const div = document.getElementById('score');
+    const divcom = document.getElementById('commentary');
 
 
-console.log('Player:',playerScore,'Computer:',computerScore)
+    if (playerScore===5)
+{    return divcom.textContent= 'You reach 5 wins first! You are the champion!!  Press the reset button to play again.';      }
+else if(computerScore===5) {
+    return divcom.textContent= 'The computer wins, try again.  Press the reset button to play again.';    
+} 
 
 
-
-    playerSelection = prompt('Choose by typing: rock, paper or scissors!');
-    computerSelection = computerPlay();
-
-    result= singleRound(playerSelection, computerSelection)
-    
-    console.log(result);
+let result= singleRound(playerSelection, computerSelection)
 
     if (result=== 'You win, the computer chose scissors!'||result==='You win, the computer chose rock!'||result=== 'You win, the computer chose paper!')
-{playerScore++;}
+{++playerScore; }
  else if(result==='You lose, the computer chose scissors!'||result==='You lose, the computer chose paper!'||result==='You lose, the computer chose rock!')
-{computerScore++;}
- else if(result=== 'You and the computer both chose paper, its a draw!'|| result==='You and the computer both chose scissors, its a draw!'||result=== 'You and the computer both chose rock, its a draw!')
-{playerScore,computerScore}; 
+{++computerScore;}
+ else if(result=== 'You and the computer both chose paper, its a draw! Try again.'|| result==='You and the computer both chose scissors, its a draw! Try again.'||result=== 'You and the computer both chose rock, its a draw!Try again.')
+{playerScore,computerScore;}; 
 
 
-console.log('Player:',playerScore,'Computer:',computerScore)
-
-
-playerSelection = prompt('Choose by typing: rock, paper or scissors!');
-    computerSelection = computerPlay();
-
-    result= singleRound(playerSelection, computerSelection)
-    
-    console.log(result);
-
-    if (result=== 'You win, the computer chose scissors!'||result==='You win, the computer chose rock!'||result=== 'You win, the computer chose paper!')
-{playerScore++;}
- else if(result==='You lose, the computer chose scissors!'||result==='You lose, the computer chose paper!'||result==='You lose, the computer chose rock!')
-{computerScore++;}
- else if(result=== 'You and the computer both chose paper, its a draw!'|| result==='You and the computer both chose scissors, its a draw!'||result=== 'You and the computer both chose rock, its a draw!')
-{playerScore,computerScore}; 
-
-
-console.log('Player:',playerScore,'Computer:',computerScore)
-
-
-playerSelection = prompt('Choose by typing: rock, paper or scissors!');
-    computerSelection = computerPlay();
-
-    result= singleRound(playerSelection, computerSelection)
-    
-    console.log(result);
-
-    if (result=== 'You win, the computer chose scissors!'||result==='You win, the computer chose rock!'||result=== 'You win, the computer chose paper!')
-{playerScore++;}
- else if(result==='You lose, the computer chose scissors!'||result==='You lose, the computer chose paper!'||result==='You lose, the computer chose rock!')
-{computerScore++;}
- else if(result=== 'You and the computer both chose paper, its a draw!'|| result==='You and the computer both chose scissors, its a draw!'||result=== 'You and the computer both chose rock, its a draw!')
-{playerScore,computerScore}; 
-
-
-console.log('Player:',playerScore,'Computer:',computerScore)
-
-
-playerSelection = prompt('Choose by typing: rock, paper or scissors!');
-    computerSelection = computerPlay();
-
-    result= singleRound(playerSelection, computerSelection)
-    
-    console.log(result);
-
-    if (result=== 'You win, the computer chose scissors!'||result==='You win, the computer chose rock!'||result=== 'You win, the computer chose paper!')
-{playerScore++;}
- else if(result==='You lose, the computer chose scissors!'||result==='You lose, the computer chose paper!'||result==='You lose, the computer chose rock!')
-{computerScore++;}
- else if(result=== 'You and the computer both chose paper, its a draw!'|| result==='You and the computer both chose scissors, its a draw!'||result=== 'You and the computer both chose rock, its a draw!')
-{playerScore,computerScore}; 
-
-
-console.log('Player:',playerScore,'Computer:',computerScore)
-
-if (playerScore>computerScore){
-    console.log('Winner, winner, chicken dinner!! You won!! Congrats!!')}
-    else if (playerScore<computerScore) {
-        console.log ('Hard luck, the computer won.')
-    }
-    else {
-        console.log('Looks like a draw. Nice try.')
-    }
+div.textContent= `Round ${round} - Player score: ${playerScore}, Computer score: ${computerScore}`
 
 
 
 
-}  
+divcom.textContent= result;   
+
+
+
+}
 
 
 
